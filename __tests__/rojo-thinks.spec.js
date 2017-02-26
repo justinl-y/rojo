@@ -18,7 +18,7 @@ describe('rojoThinks', () => {
     describe('.listen', () => {
       // when
       describe('when passed string that starts with "when"', () => {
-        describe('when the string contains "time"', () => {
+        describe('when the string also contains "time"', () => {
           it('should return a string containing am or pm', () => {
             const timeRegex = /.+am|pm.*/i;
             const testString = 'When during the day are you free?';
@@ -75,11 +75,11 @@ describe('rojoThinks', () => {
 
       // where
       describe('when passed a string that starts with "where"', () => {
-        describe('when the string also contains "go"', () => {
-          it('should return a string of a place?', () => {
-            const whereRegex = /.*London|Seattle|France|Italy|New York*/i;
-            const testString = 'Where shall we go?';
-            const result = whereRegex.test(test.subject(testString));
+        describe('when the string also contains "my"', () => {
+          it('should return a string of a location name?', () => {
+            const placeRegex = /.*bed|fridge|sofa|table*/i;
+            const testString = 'Where are my keys?';
+            const result = placeRegex.test(test.subject(testString));
 
             expect(result).toBe(true);
           });
@@ -95,6 +95,39 @@ describe('rojoThinks', () => {
           });
         });
       }); //where
+
+      // which
+      describe('when passed a string that starts with "which"', () => {
+        describe('when the string also contains "country"', () => {
+          it('should return a string of a country name?', () => {
+            const countryRegex = /.*Mexico|Brazil|France|Italy|Spain*/i;
+            const testString = 'Which country shall we go to?';
+            const result = countryRegex.test(test.subject(testString));
+
+            expect(result).toBe(true);
+          });
+        });
+
+        describe('when the string also contains "city"', () => {
+          it('should return a string of a city name?', () => {
+            const cityRegex = /.*London|Seattle|Paris|Rome|New York*/i;
+            const testString = 'Which city shall we go to?';
+            const result = cityRegex.test(test.subject(testString));
+
+            expect(result).toBe(true);
+          });
+        });
+
+        describe('when the string does not contain an answerable "which" question', () => {
+          it('should return a string of which?', () => {
+            const whichRegex = /.*which*/i;
+            const testString = 'Which is?';
+            const result = whichRegex.test(test.subject(testString));
+
+            expect(result).toBe(true);
+          });
+        });
+      }); //which
 
     });
   });
