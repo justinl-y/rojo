@@ -1,32 +1,4 @@
-/* const max = require('../lib/maths.js').max;
-
-describe('max', () => {
-  // test for no error on no parameters
-  describe('when I pass in zero parameters', () => {
-    it('should throw error', () => {
-      expect(() => max()).toThrow('Must have at least one parameter');
-    });
-  });
-
-  // test to return larger of two parameters
-  describe('when I pass in two parameters', () => {
-    it('should return the larger of the two values', () => {
-      const result = max(2, 3);
-      expect(result).toEqual(3);
-    });
-  });
-}); */
-
 const rojoThinks = require('../lib/rojo-thinks.js').rojoThinks;
-
-/*describe('rojoThinks', () => {
-  // test for no error on no parameters
-  describe('when I pass in zero parameters', () => {
-    it('should throw error', () => {
-      expect(() => rojoThinks()).toThrow('Must have at least one parameter');
-    });
-  });
-});*/
 
 describe('rojoThinks', () => {
   let test;
