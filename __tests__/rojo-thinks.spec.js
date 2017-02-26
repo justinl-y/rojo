@@ -28,7 +28,7 @@ describe('rojoThinks', () => {
             expect(result).toBe(true);
           });
         });
-      }); //what
+      }); //when
 
       // what
       describe('when passed a string that starts with "what"', () => {
@@ -71,7 +71,7 @@ describe('rojoThinks', () => {
             expect(result).toBe(true);
           });
         });
-     }); // when
+     }); // what
 
       // where
       describe('when passed a string that starts with "where"', () => {
