@@ -18,19 +18,21 @@ describe('rojoThinks', () => {
     describe('.listen', () => {
       // when
       describe('when passed string that starts with "when"', () => {
-        it('should return a string containing am or pm', () => {
-          const timeRegex = /.+am|pm.*/i;
-          const testString = 'When are you coming home?';
-          const output = test.subject(testString);
-          const result = timeRegex.test(output);
+        describe('when the string contains "time"', () => {
+          it('should return a string containing am or pm', () => {
+            const timeRegex = /.+am|pm.*/i;
+            const testString = 'When during the day are you free?';
+            const output = test.subject(testString);
+            const result = timeRegex.test(output);
 
-          expect(result).toBe(true);
+            expect(result).toBe(true);
+          });
         });
       });
 
       // what
       describe('when passed a string that starts with "what"', () => {
-        describe('when the string contains "time"', () => {
+        describe('when the string also contains "time"', () => {
           it('should return a string containing am or pm', () => {
             const timeRegex = /.+am|pm.*/i;
             const testString = 'What time are you coming home?';
@@ -40,8 +42,8 @@ describe('rojoThinks', () => {
           });
         });
 
-        describe('when the string does not contain "time"', () => {
-          describe('when the string contains "age"', () => {
+        //describe('when the string does not contain "time"', () => {
+          describe('when the string also contains "age"', () => {
             it('should return a string containing an age', () => {
               const ageRegex = /^\d{1,2}$/;
               const testString = 'What age are you?';
@@ -52,9 +54,9 @@ describe('rojoThinks', () => {
               expect(result).toBe(true);
             });
           });
-        });
+        //});
 
-        describe('when the string does not contain "time"', () => {
+        //describe('when the string does not contain "time"', () => {
           describe('when the string also contains "day"', () => {
             it('should return a string containing a day of the week', () => {
               const dayRegex = /.*monday|tuesday|wednesday|thursday|friday|saturday|sunday.*/i;
@@ -64,9 +66,9 @@ describe('rojoThinks', () => {
               expect(result).toBe(true);
             });
           });
-        });
+        //});
         
-        describe('when the string does not contain "time"', () => {
+        //describe('when the string does not contain "time"', () => {
           describe('when the string does not contain an answerable "what" question', () => {
             it('should return a string of what?', () => {
               const whatRegex = /.*what*/i;
@@ -76,22 +78,22 @@ describe('rojoThinks', () => {
               expect(result).toBe(true);
             });
           });
-        });
+        //});
 
-      });
+     }); 
 
       // where
       describe('when passed a string that starts with "where"', () => {
-          describe('when the string does not contain an answerable "where" question', () => {
-            it('should return a string of where?', () => {
-              const whatRegex = /.*where*/i;
-              const testString = 'Where is?';
-              const result = whatRegex.test(test.subject(testString));
+        describe('when the string does not contain an answerable "where" question', () => {
+          it('should return a string of where?', () => {
+            const whereRegex = /.*where*/i;
+            const testString = 'Where is?';
+            const result = whereRegex.test(test.subject(testString));
 
-              expect(result).toBe(true);
-            });
+            expect(result).toBe(true);
           });
         });
+      });
 
     });
   });
