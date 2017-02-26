@@ -28,7 +28,7 @@ describe('rojoThinks', () => {
             expect(result).toBe(true);
           });
         });
-      });
+      }); //what
 
       // what
       describe('when passed a string that starts with "what"', () => {
@@ -42,48 +42,49 @@ describe('rojoThinks', () => {
           });
         });
 
-        //describe('when the string does not contain "time"', () => {
-          describe('when the string also contains "age"', () => {
-            it('should return a string containing an age', () => {
-              const ageRegex = /^\d{1,2}$/;
-              const testString = 'What age are you?';
-              const result = ageRegex.test(test.subject(testString));
+        describe('when the string also contains "age"', () => {
+          it('should return a string containing an age', () => {
+            const ageRegex = /^\d{1,2}$/;
+            const testString = 'What age are you?';
+            const result = ageRegex.test(test.subject(testString));
 
-              // console.log(test.subject(testString));
-
-              expect(result).toBe(true);
-            });
+            expect(result).toBe(true);
           });
-        //});
+        });
 
-        //describe('when the string does not contain "time"', () => {
-          describe('when the string also contains "day"', () => {
-            it('should return a string containing a day of the week', () => {
-              const dayRegex = /.*monday|tuesday|wednesday|thursday|friday|saturday|sunday.*/i;
-              const testString = 'What day are you coming home?';
-              const result = dayRegex.test(test.subject(testString));
+        describe('when the string also contains "day"', () => {
+          it('should return a string containing a day of the week', () => {
+            const dayRegex = /.*monday|tuesday|wednesday|thursday|friday|saturday|sunday.*/i;
+            const testString = 'What day are you coming home?';
+            const result = dayRegex.test(test.subject(testString));
 
-              expect(result).toBe(true);
-            });
+            expect(result).toBe(true);
           });
-        //});
+        });
         
-        //describe('when the string does not contain "time"', () => {
-          describe('when the string does not contain an answerable "what" question', () => {
-            it('should return a string of what?', () => {
-              const whatRegex = /.*what*/i;
-              const testString = 'What colour are you?';
-              const result = whatRegex.test(test.subject(testString));
+        describe('when the string does not contain an answerable "what" question', () => {
+          it('should return a string of what?', () => {
+            const whatRegex = /.*what*/i;
+            const testString = 'What colour are you?';
+            const result = whatRegex.test(test.subject(testString));
 
-              expect(result).toBe(true);
-            });
+            expect(result).toBe(true);
           });
-        //});
-
-     }); 
+        });
+     }); // when
 
       // where
       describe('when passed a string that starts with "where"', () => {
+        describe('when the string also contains "go"', () => {
+          it('should return a string of a place?', () => {
+            const whereRegex = /.*London|Seattle|France|Italy|New York*/i;
+            const testString = 'Where shall we go?';
+            const result = whereRegex.test(test.subject(testString));
+
+            expect(result).toBe(true);
+          });
+        });
+
         describe('when the string does not contain an answerable "where" question', () => {
           it('should return a string of where?', () => {
             const whereRegex = /.*where*/i;
@@ -93,7 +94,7 @@ describe('rojoThinks', () => {
             expect(result).toBe(true);
           });
         });
-      });
+      }); //where
 
     });
   });

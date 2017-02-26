@@ -25,7 +25,7 @@ describe('rojoSays', () => {
     });
 
     it('should return a string', () => {
-      expect(test.subject('What is the time rojo?')).toEqual('4:30pm');
+      expect(test.subject('What is the time rojo?')).toEqual('4:30pm as I recall');
     });
 
     it.skip('should pass correct params to rojoThinks', () => {
