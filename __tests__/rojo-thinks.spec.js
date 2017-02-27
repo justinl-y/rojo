@@ -25,7 +25,7 @@ describe('rojoThinks', () => {
             expect(result).toBe(true);
           });
         });
-      }); //when
+      }); //end when
 
       // what
       describe('when passed a string that starts with "what"', () => {
@@ -68,7 +68,7 @@ describe('rojoThinks', () => {
             expect(result).toBe(true);
           });
         });
-     }); // what
+     }); // end what
 
       // where
       describe('when passed a string that starts with "where"', () => {
@@ -91,7 +91,7 @@ describe('rojoThinks', () => {
             expect(result).toBe(true);
           });
         });
-      }); //where
+      }); // end where
 
       // which
       describe('when passed a string that starts with "which"', () => {
@@ -124,7 +124,7 @@ describe('rojoThinks', () => {
             expect(result).toBe(true);
           });
         });
-      }); //which
+      }); // end which
 
     });
   });
