@@ -14,9 +14,7 @@ describe('rojoSays', () => {
   describe('when valid values are passed', () => {
     beforeEach(() => {
       jest.mock('../lib/rojo-thinks', () => ({
-        rojoThinks: jest.fn(() => 'An answer to your question amigo.'),
-        // min: jest.fn(() => 2),
-        // max: jest.fn(() => 7)
+        rojoThinks: jest.fn(() => '4:30pm as I recall.'),
       }));
 
       test = {};
@@ -25,12 +23,12 @@ describe('rojoSays', () => {
     });
 
     it('should return a string', () => {
-      expect(test.subject('What is the time rojo?')).toEqual('4:30pm as I recall');
+      expect(test.subject('What is the time Rojo?')).toEqual('4:30pm as I recall.');
     });
 
     it.skip('should pass correct params to rojoThinks', () => {
-      test.subject('string');
-      expect(test.rojoThinks).toHaveBeenCalledWith('string');
+      test.subject(question);
+      expect(test.rojoThinks).toHaveBeenCalledWith(question);
     });
   });
 });

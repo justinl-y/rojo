@@ -1,5 +1,3 @@
-const rojoThinks = require('../lib/rojo-thinks.js').rojoThinks;
-
 describe('rojoThinks', () => {
   let test;
 
@@ -8,7 +6,6 @@ describe('rojoThinks', () => {
 
       test = {};
       test.subject = require('../lib/rojo-says');
-      test.rojoThinks = require('../lib/rojo-thinks');
     });
 
     it.skip('should return an string answer', () => {
