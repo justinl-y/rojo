@@ -1,0 +1,54 @@
+Title:
+	
+	Rojo is asked question.
+
+Narrative 1:
+	
+	Something is asked of Rojo and Rojo must answer.
+
+Scenario 1:
+
+	Given that Rojo is asked something as a parameter.
+		And that parameter is present.
+		And that parameter is a string.
+	Then Rojo will think about an answer.
+		And Rojo will answer.
+
+Scenario 2: 
+
+	Given that Rojo is asked something as a parameter.
+		And that parameter is not present.
+		Or that parameter is not a string.
+	Then Rojo will answer.
+		And Rojo will say: “Non comprende amigo”.
+
+
+Narrative 2:
+
+	Rojo thinks about something he is asked.
+
+Scenario 1:
+
+	Given the Rojo is asked something in the form of a string parameter.
+		And that parameter is a question.
+		And that question contains words that Rojo recognises.
+		And Rojo can match to an answer he knows.
+	Then Rojo will formulate an answer as a string.
+		And Rojo will answer.
+
+Scenario 2:
+
+	Given that Rojo is asked something in the form of a string parameter.
+		And that parameter is not a question.
+	Then Rojo will formulate an answer as a string.
+		And that string will be “Not a question amigo”.
+		And Rojo will answer.
+	
+Scenario 3:
+
+	Given that Rojo is asked something in the form of a string parameter.
+    And that parameter is a question.
+		And that question contains words that Rojo does not recognise.
+	Then Rojo will formulate an answer as a string.
+		And that string will be “Rojo dumb :(”.
+		And Rojo will answer.
