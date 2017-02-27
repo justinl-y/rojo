@@ -1,6 +1,6 @@
 # Behaviour and test-driven development with Jest - JavaScript, Jest
 
-<img src="screen-shot.png" height="600px" width="300px">
+<img src="screen-shot.png" height="600px" width="auto">
 
 The purpose of this project was to explore the principles of behaviour and test-driven development using Jest. To explore these concepts 
 the goal of building a JavaScript application that could accept a question parameter and return and answer was considered.
